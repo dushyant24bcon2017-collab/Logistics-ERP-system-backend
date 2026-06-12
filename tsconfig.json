@@ -1,13 +1,24 @@
 {
   "compilerOptions": {
-    "module": "CommonJS",
-    "moduleResolution": "node",
-    "target": "ES2023",
-    "strict": true,
-    "esModuleInterop": true,
-    "outDir": "./dist",
-    "rootDir": "./src",
-    "ignoreDeprecations": "6.0"
+    /* Target and Environment Settings */
+    "target": "ESNext",                          /* Latest ECMAScript feature support */
+    "module": "NodeNext",                        /* Standard for modern Node.js module resolution */
+    "moduleResolution": "NodeNext",              /* Tells TS how to look up files in Node */
+    "lib": ["ESNext"],                           /* Global types available (excludes browser DOM) */
+    "types": ["node"],                           /* Explicitly loads Node.js type definitions */
+
+    /* File Layout and Output */
+    "rootDir": "./src",                          /* Locate source files here */
+    "outDir": "./dist",                          /* Destination for compiled JavaScript output */
+    "sourceMap": true,                           /* Useful for debugging errors in production */
+    "removeComments": true,                      /* Decreases output file size */
+
+
+    /* Interoperability and Reliability */
+    "esModuleInterop": true,                     /* Seamless imports between CommonJS and ES Modules */
+    "skipLibCheck": true,                        /* Skip checking types of external declaration files */
+    "forceConsistentCasingInFileNames": true     /* Ensures safety across different Operating Systems */
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*"],                       /* Files or directories to include */
+  "exclude": ["node_modules", "dist"]            /* Files or directories to ignore */
 }
