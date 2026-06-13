@@ -18,7 +18,7 @@ const app = express()
 const adapter = new PrismaPg({ connectionString: process.env.DATABASE_URL })
 export const prisma = new PrismaClient({ adapter })   
 app.use(express.json())
-app.use(cors({ origin:[ 'http://localhost:5173',"https://logistics-erp-system-kappa.vercel.app"], credentials: true }))
+app.use(cors());
 app.use(helmet())
 
 
