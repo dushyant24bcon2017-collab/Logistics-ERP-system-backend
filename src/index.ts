@@ -12,13 +12,13 @@ import helmet from 'helmet'
 import { verifyTokens, isAdmin,AuthRequest } from './middleware/auth';
 import analytics from './routes/analytics'
 //INITIALIZATION
-const port = 5000
+const port = process.env.PORT ||5000
 const app = express()
 //@ts-ignore
 const adapter = new PrismaPg({ connectionString: process.env.DATABASE_URL })
 export const prisma = new PrismaClient({ adapter })   
 app.use(express.json())
-app.use(cors({ origin: 'http://localhost:5173', credentials: true }))
+app.use(cors({ origin:[ 'http://localhost:5173',"https://logistics-erp-system-kappa.vercel.app"], credentials: true }))
 app.use(helmet())
 
 
